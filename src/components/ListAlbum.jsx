@@ -25,7 +25,7 @@ const ListAlbum = (props) => {
                 <button className='listAlbum__Plus'>
                     {<PlusIcon />}
                 </button>
-                <div className='listAlbum__Song'>{props.data.name}</div>
+                <div className='listAlbum__Song'>{props.data.song_name}</div>
                 <p className='listAlbum__Reproductions' >{props.data.played_song_number}</p>
                 <p className='listAlbum__Time'>{props.data.duration}</p>
                 <button className='listAlbum__Download'>

@@ -5,14 +5,9 @@ import '../styles/PagesStyles/SignIn.scss';
 import Logo from '../Assets/Icons/logo.svg';
 import Input from '../components/Input';
 import ButtonWhite from '../components/ButtonWhite';
-import { useFetchAlbum } from '../hooks/useFetchAlbum';
 
 export default function SingIn() {
-    //-----------------FETCH Albums (call toAPI)------------------------------//
-    const albumList = useFetchAlbum('https://mastersound-backend.azurewebsites.net/api/albums/new-releases')       
-    //-----------------storing the album in the local storage----------------------//
-    localStorage.setItem( "albums", JSON.stringify( albumList ))
-
+   
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

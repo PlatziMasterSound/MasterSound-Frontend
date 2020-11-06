@@ -17,7 +17,7 @@ export default class Panel extends Component {
     render() {
         return(
             <div className='panel'>
-                <img className='panel__logo' src={Logo} alt='Logo' />
+                <img className='panel__logo' src={Logo} alt='App logo' />
                 <Link to="/home">
                     <SideLinks icon={<DiscoverIcon />} text='Discover' />
                 </Link>

@@ -10,20 +10,20 @@ const ListTrack = ({number, song, artist, reproductions, time}) => {
         <Fragment>
             <section className='listTrack'>
                 <p className='listTrack__Number'>{number}</p>
-                <button className='listTrack__Favourite'>
+                <div className='listTrack__Favourite'>
                     {<FavouriteIcon />}
-                </button>
-                <button className='listTrack__Song'>{song}</button>
-                <button className='listTrack__Artist'>{artist}</button>
+                </div>
+                <div className='listTrack__Song'>{song}</div>
+                <div className='listTrack__Artist'>{artist}</div>
                 <p className='listTrack__Reproductions'>{reproductions}</p>
                 <p className='listTrack__Time'>{time}</p>
-                <button className='listTrack__Download'>
+                <div className='listTrack__Download'>
                     {<DownloadItemsIcon />}
-                </button>
-                <button className='listTrack__Share'>
+                </div>
+                <div className='listTrack__Share'>
                     <ShareIcon />
-                </button>
-                <button className='listTrack__Points'>...</button>
+                </div>
+                <div className='listTrack__Points'>...</div>
             </section>
         </Fragment>
     );

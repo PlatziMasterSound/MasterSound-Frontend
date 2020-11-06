@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/componentsStyles/SideLinks.scss';
+import React, { Fragment } from 'react'
+import '../styles/componentsStyles/SideLinks.scss'
 
 const SideLinks = ({icon, text}) => {
     return (

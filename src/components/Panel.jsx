@@ -31,7 +31,9 @@ export default class Panel extends Component {
                 <SideLinks icon={<YoutubeIcon />} text='YouTube' />
                 
                 <p className='panel__p'>My Tracks</p>
-                <SideLinks icon={<FavouriteIcon />} text='Favourite' />
+                <Link to="/favorite">
+                    <SideLinks icon={<FavouriteIcon />} text='Favourite' />
+                </Link>
                 <SideLinks icon={<RecentHistoryIcon />} text='Recent History' />
                 <SideLinks icon={<DownloadItemsIcon />} text='Download Items' />
                 <SideLinks icon={<LocalfilesIcon />} text='Local Files' />
@@ -50,4 +52,5 @@ export default class Panel extends Component {
         )
     }
 }
+
 

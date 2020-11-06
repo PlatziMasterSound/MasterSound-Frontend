@@ -8,6 +8,7 @@ import Album from './Pages/Album'
 import AlbumLibrary from './Pages/AlbumLibrary'
 import NotFound from './Pages/NotFound'
 import ArtistSection from './Pages/ArtistSection'
+import Favorite from './Pages/Favorite'
 
 
 function App() {
@@ -38,6 +39,11 @@ function App() {
               exact 
               path='/album-library' 
               component={AlbumLibrary} 
+            />
+            <Route 
+              exact 
+              path='/favorite' 
+              component={Favorite} 
             />
             <Route 
               exact 

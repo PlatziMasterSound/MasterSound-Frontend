@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import HeartLike from '../components/HeartLike'
 import '../styles/componentsStyles/ListTrack.scss';
 
 //********  Icons  **********//
@@ -12,6 +13,7 @@ const ListTrack = ({number, song, artist, reproductions, time}) => {
                 <p className='listTrack__Number'>{number}</p>
                 <div className='listTrack__Favourite'>
                     {<FavouriteIcon />}
+                    <HeartLike />
                 </div>
                 <div className='listTrack__Song'>{song}</div>
                 <div className='listTrack__Artist'>{artist}</div>

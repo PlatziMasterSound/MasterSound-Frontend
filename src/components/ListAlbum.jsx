@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 import '../styles/componentsStyles/ListAlbum.scss';
-
+import HeartLike from '../components/HeartLike';
 import {setPlaying} from '../actions/songActions'
 //********  Icons  **********//
-import { FavouriteIcon, DownloadItemsIcon, ShareIcon, PlusIcon } 
+import { DownloadItemsIcon, ShareIcon, PlusIcon } 
+
 from '../components/Icons';
 
 
@@ -20,7 +21,8 @@ const ListAlbum = (props) => {
             <section onClick={setPlayingSong} className='listAlbum'>
                 <p className='listAlbum__Number'>{props.data.order_number}</p> 
                 <div className='listAlbum__Favourite'>
-                    {<FavouriteIcon />}
+                    
+                    <HeartLike />
                 </div>
                 <button className='listAlbum__Plus'>
                     {<PlusIcon />}

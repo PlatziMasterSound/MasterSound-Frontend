@@ -9,10 +9,12 @@ import thunk from 'redux-thunk';
 
 // Import and combine reducers
 import { songReducer } from '../reducer/songReducer';
+import { favoriteReducer } from '../reducer/favoriteReducer';
 
 const rootReducer = combineReducers({
-  songReducer,
+  songReducer, favoriteReducer,
 });
+
 
 // Get the enhancer to redux devtools
 const composeEnhancers =

@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
-import { useDispatch } from 'react-redux';
-import '../styles/componentsStyles/ListAlbum.scss';
-import HeartLike from '../components/HeartLike';
-import {setPlaying} from '../actions/songActions'
+import React, { Fragment } from 'react'
+import { useDispatch } from 'react-redux'
+import '../styles/componentsStyles/ListAlbum.scss'
+import HeartLike from '../components/HeartLike'
+import { setPlaying } from '../actions/songActions'
+import { setFavorite } from '../actions/favoriteActions'
 //********  Icons  **********//
 import { DownloadItemsIcon, ShareIcon, PlusIcon } 
 
@@ -15,19 +16,22 @@ const ListAlbum = (props) => {
     function setPlayingSong () {
         dispatch(setPlaying(props.data.sound_url))
     }
+    function setFavoriteSong () {
+        dispatch(setFavorite(props.data.song_name))
+    }
+    console.log(setPlayingSong)
 
     return (
         <Fragment>
-            <section onClick={setPlayingSong} className='listAlbum'>
+            <section className='listAlbum'>
                 <p className='listAlbum__Number'>{props.data.order_number}</p> 
-                <div className='listAlbum__Favourite'>
-                    
+                <div onClick={setFavoriteSong} className='listAlbum__Favourite'>
                     <HeartLike />
                 </div>
                 <button className='listAlbum__Plus'>
                     {<PlusIcon />}
                 </button>
-                <div className='listAlbum__Song'>{props.data.song_name}</div>
+                <div onClick={setPlayingSong} className='listAlbum__Song'>{props.data.song_name}</div>
                 <p className='listAlbum__Reproductions' >{props.data.played_song_number}</p>
                 <p className='listAlbum__Time'>{props.data.duration}</p>
                 <button className='listAlbum__Download'>
@@ -41,5 +45,6 @@ const ListAlbum = (props) => {
         </Fragment>
     );
 }
+                    
  
 export default ListAlbum;

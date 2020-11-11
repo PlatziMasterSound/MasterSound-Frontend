@@ -1,16 +1,17 @@
 import React from 'react'
-
+import Panel from '../components/Panel'
 import '../styles/PagesStyles/AlbumLibrary.scss'
 
 const Favorite = () => {
 
     return (
         <div className="Favorite__container">
-            <h1>Aquí se agregarán las cancioness favoritas del usuario para las cuales crearemos un nuevo componente</h1>
+            <Panel />
         </div>
         );
     }
      
 export default Favorite;
+
         
        

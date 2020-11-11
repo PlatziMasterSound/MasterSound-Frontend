@@ -5,7 +5,7 @@ export function useFetchmusic (spt_album_id) {
 
   const [music, setMusic] = useState([]);
 
-  const URL = `https://mastersound-backend.azurewebsites.net/api/albums/${spt_album_id}/songs`
+  const URL = `https://mastersound-backend-test.azurewebsites.net/api/albums/${spt_album_id}/songs`
 
   async function fetchMusic () {
     const response = await fetch(URL);

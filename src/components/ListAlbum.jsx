@@ -17,7 +17,7 @@ const ListAlbum = (props) => {
         dispatch(setPlaying(props.data.sound_url))
     }
     function setFavoriteSong () {
-        dispatch(setFavorite(props.data.song_name))
+        dispatch(setFavorite(props.data.song_id))
     }
     console.log(setPlayingSong)
 

@@ -10,9 +10,11 @@ import thunk from 'redux-thunk';
 // Import and combine reducers
 import { songReducer } from '../reducer/songReducer';
 import { favoriteReducer } from '../reducer/favoriteReducer';
+import { playListReducer } from '../reducer/playListReducer';
+
 
 const rootReducer = combineReducers({
-  songReducer, favoriteReducer,
+  songReducer, favoriteReducer, playListReducer,
 });
 
 

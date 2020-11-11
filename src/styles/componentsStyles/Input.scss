@@ -3,10 +3,9 @@
 .input {
     display: flex;
     align-items: center;
-    width: 42vmax;
+    width: 42vw;
     height: 44px;
-    margin: 14px auto 25px;
-    background-size: 25px;
+    margin: 5px 0 0 10px; 
     padding-left: 30px;
     border-radius: 20px;
     border: 2px solid #F2EBEF;
@@ -17,3 +16,7 @@
     cursor: pointer;
     outline: none;
 }
+.input::placeholder {
+    color: rgba(242, 235, 239, .5);
+    font-size: 12px;
+  }

@@ -14,7 +14,7 @@ import MenuBar from '../components/MenuBar'
 
 const Home = () => {
     //-----------------FETCH Albums (call toAPI)------------------------------//
-    const albumList = useFetchAlbum('https://mastersound-backend.azurewebsites.net/api/albums/new-releases')       
+    const albumList = useFetchAlbum('https://mastersound-backend-test.azurewebsites.net/api/albums/new-releases')       
      
     //-----------------storing the album in the local storage----------------------//
            localStorage.setItem( "albums", JSON.stringify( albumList ))

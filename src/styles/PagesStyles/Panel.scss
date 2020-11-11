@@ -34,3 +34,60 @@
         }
     }
 }
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(69,2,32, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+  }
+  .Modal__container-PlayList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    top: 10rem;
+    background-color: rgb(29,2,46);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    width: 50vmax;
+    height: 160px;
+    border-radius: 20px;
+    animation: modalIn .8s forwards;
+  }
+  @keyframes modalIn {
+    0%{
+        transform: translateY(-3000px);
+    }
+    60%{
+        transform: translateY(25px);
+    }
+    75%{
+        transform: translateY(-10px);
+    }
+    90%{
+        transform: translateY(5px);
+    }
+}
+.Input-styl{
+    align-self: center;
+}
+  .close-button img{
+    height: 20px;
+    cursor: pointer;
+    position: absolute; 
+    top: 20px;
+    right: 20px;
+  }
+  .close-button img:hover{  
+      transform: rotate(45deg);
+  }
+  .create-button{
+      margin-top: 10px;
+      align-self: center;
+  }

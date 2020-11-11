@@ -1,10 +1,12 @@
-import React, { Component }  from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/PagesStyles/Panel.scss';
-import SideLinks from '../components/SideLinks';
-import Logo from '../Assets/Icons/logo.svg';
-
-import Plus from '../Assets/Icons/Plus.svg';
+import React, { Component }  from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/PagesStyles/Panel.scss'
+import SideLinks from '../components/SideLinks'
+import Logo from '../Assets/Icons/logo.svg'
+import Input from '../components/Input'
+import Plus from '../Assets/Icons/Plus.svg'
+import CloseBTN from '../Assets/Icons/CloseBTN.svg'
+import ButtonWhite from '../components/ButtonWhite'
 
 //********  Icons  **********//
 import { AddIcon, DiscoverIcon, SongsIcon,
@@ -13,7 +15,34 @@ import { AddIcon, DiscoverIcon, SongsIcon,
         LocalfilesIcon, DownloadItemsIcon } 
 from '../components/Icons';
 
+class ModalNewPlayList extends Component{
+    render(){
+        return(
+          <div className="Modal">
+            <div className="Modal__container-PlayList">
+                <div className="close-button">
+                    <img src={CloseBTN} alt="Close" onClick={this.props.onCloseLogin}/> 
+                </div>
+                <div className='Input-styl'>
+                    <Input type='text' placeholder='Nombre de tú Playlist' name='Play List'/>
+                </div>
+                <div className='create-button'>
+                    <ButtonWhite text='Crear'/>
+                </div>
+            </div> 
+        </div>
+        )
+    }
+}
+
+
 export default class Panel extends Component {
+
+    state = {isModalNewPlayListOpen: false}
+
+    _openNewPlayList = () => this.setState({ isModalNewPlayListOpen:true })
+    _closeNewPlayList = () => this.setState({ isModalNewPlayListOpen:false })
+
     render() {
         return(
             <div className='panel'>
@@ -40,17 +69,20 @@ export default class Panel extends Component {
 
                 <div className='PlayList'>
                     <p className='PlayList__p'>Playlist</p>
-                    <Link to='/'>
-                        <img className='PlayList__img' src={Plus} alt='Agregar' />
-                    </Link>
+                        <img className='PlayList__img' src={Plus} alt='Agregar' onClick={this._openNewPlayList}/>
+                    {
+                    this.state.isModalNewPlayListOpen &&
+                    <ModalNewPlayList onCloseLogin={this._closeNewPlayList}/> 
+                    }
                 </div>
-                <SideLinks icon={<AddIcon />} text='Bangla' />
-                <SideLinks icon={<AddIcon />} text='English' />
-                <SideLinks icon={<AddIcon />} text='My Style' />
-                <SideLinks icon={<AddIcon />} text='Hindi' />
             </div>
         )
     }
 }
+                   
 
-
+/* 
+<SideLinks icon={<AddIcon />} text='Bangla' />
+<SideLinks icon={<AddIcon />} text='English' />
+<SideLinks icon={<AddIcon />} text='My Style' />
+<SideLinks icon={<AddIcon />} text='Hindi' /> */

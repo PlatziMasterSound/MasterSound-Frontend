@@ -7,6 +7,7 @@ import Input from '../components/Input'
 import Plus from '../Assets/Icons/Plus.svg'
 import CloseBTN from '../Assets/Icons/CloseBTN.svg'
 import ButtonWhite from '../components/ButtonWhite'
+import PlayList from '../components/PlayList'
 
 //********  Icons  **********//
 import { AddIcon, DiscoverIcon, SongsIcon,
@@ -24,7 +25,7 @@ class ModalNewPlayList extends Component{
                     <img src={CloseBTN} alt="Close" onClick={this.props.onCloseLogin}/> 
                 </div>
                 <div className='Input-styl'>
-                    <Input type='text' placeholder='Nombre de tú Playlist' name='Play List'/>
+                    <Input type='text' placeholder='Playlist Name' name='Play List'/>
                 </div>
                 <div className='create-button'>
                     <ButtonWhite text='Crear'/>
@@ -37,6 +38,7 @@ class ModalNewPlayList extends Component{
 
 
 export default class Panel extends Component {
+
 
     state = {isModalNewPlayListOpen: false}
 
@@ -75,14 +77,9 @@ export default class Panel extends Component {
                     <ModalNewPlayList onCloseLogin={this._closeNewPlayList}/> 
                     }
                 </div>
+                <PlayList folderIcon={<AddIcon />}/>
             </div>
         )
     }
 }
                    
-
-/* 
-<SideLinks icon={<AddIcon />} text='Bangla' />
-<SideLinks icon={<AddIcon />} text='English' />
-<SideLinks icon={<AddIcon />} text='My Style' />
-<SideLinks icon={<AddIcon />} text='Hindi' /> */

@@ -1,5 +1,6 @@
 import React, { useEffect }  from 'react'
 import { useFetchAlbum } from '../hooks/useFetchAlbum'
+import { useFetchPlayList } from '../hooks/useFetchPlayList'
 
 import Panel from '../components/Panel'
 import '../styles/PagesStyles/Home.scss'
@@ -18,6 +19,10 @@ const Home = () => {
      
     //-----------------storing the album in the local storage----------------------//
            localStorage.setItem( "albums", JSON.stringify( albumList ))
+
+        const PlayList = useFetchPlayList()
+//---------------storing the PlayList in the local storage----------------------//
+    localStorage.setItem( "PlayList", JSON.stringify( PlayList ))
 
     useEffect(() => {
         window.scroll(0, 0)

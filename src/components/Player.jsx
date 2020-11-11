@@ -6,12 +6,12 @@ import { useSelector } from 'react-redux'
 const Player = ({ data }) => {
     const playing = useSelector(state => state.songReducer.playing)
    
-    const [ song, setSong] = useState(playing);
+   /*  const [ song, setSong] = useState(playing);
     console.log(song);
 
     useEffect(() => {
         setSong(playing)
-      }, [playing]);
+      }, [playing]); */
 
     const nameArtists = data.artists.map((data) => {
         return data.artist_name;
@@ -26,7 +26,7 @@ const Player = ({ data }) => {
                     </div>
             </div>
             <audio className="Player__Style" controls >
-                <source src={song} type="audio/mpeg" />
+                <source src={playing} type="audio/mpeg" />
             </audio>
         </section>
     )

@@ -17,6 +17,7 @@ function InfoAlbum({ data }) {
     })
 //----------------------getting songs from local storage-----------------------//
     const musicLocalstorage = JSON.parse( localStorage.getItem("SongsList"))
+    
     const idAlbum = data.spt_album_id;
 
     return (

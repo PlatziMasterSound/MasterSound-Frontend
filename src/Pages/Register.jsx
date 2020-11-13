@@ -4,7 +4,8 @@ import Input from '../components/Input';
 import '../styles/PagesStyles/Register.scss';
 import Logo from '../Assets/Icons/logo.svg';
 import ButtonWhite from '../components/ButtonWhite';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Register () {
@@ -18,12 +19,23 @@ export default function Register () {
 
     const history = useHistory();
 
+    const successToast = () => {
+        toast('succes custom Toast', {
+            draggable: true,
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 6000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            progress: undefined,
+        }) 
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         
         fetch('https://mastersound-backend.azurewebsites.net/api/auth/signup', {
             method: 'post',
-            mode: 'cors', 
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -36,21 +48,49 @@ export default function Register () {
                 image_url: 'https://i.scdn.co/image/23009960c33ef08d5973440cca17985a6c70a515',
                 sex
             })
-        }).then(res => res.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => {
-            if(response) {
-                console.log('Success:', response);
-                history.push('/signin');
+        })
+        .then(res => res.json())
+        .then(res => {
+            if(res.user_id) {
+                toast.success('Registrado Correctamente!!!', {
+                    draggable: true,
+                })
+                history.push('/signin')
+            } else {
+                toast.error('Completar o Corregir datos!!!', {
+                    draggable: true,
+                })
             }
-        } 
-    )};
+        })
+        .catch(error => {
+            toast.warn('Error en el servidor!!!', {
+                draggable: true,
+            })
+            console.error('Error:', error)
+        }) 
+    };
 
-    
     return(
         <main className='mainRegister'>
             <img src={Logo} alt='Logo' />
             <form onSubmit={handleSubmit} className='mainSignIn__form'>
+                <>
+                    <ToastContainer 
+                        position="top-center"
+                        draggable={false} 
+                        autoClose={8000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        pauseOnHover 
+                        style={{ width: '400px', 
+                                height: '300px',
+                                color:'white',
+                                top:'18%' }}
+                    />
+                </>
                 <label>Nombre de Usuario</label>
                 <Input
                     type='text' 

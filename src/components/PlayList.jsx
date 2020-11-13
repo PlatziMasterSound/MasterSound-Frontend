@@ -8,7 +8,7 @@ const PlayList = () => {
             <div>  
               {
                 playListLocalStorage.map((data) => (
-                    <PlayListFolder data={data} key={data.id} {...data}/>
+                    <PlayListFolder data={data} key={data.playlist_id} {...data}/>
                 ))
               }
             </div>

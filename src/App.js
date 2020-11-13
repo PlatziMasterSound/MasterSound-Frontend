@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './Pages/Home'
-import SignIn, {isLogin} from './Pages/SignIn'
+import SignIn from './Pages/SignIn'
 import Register from './Pages/Register'
 import AnimationLoader from './Pages/AnimationLoader'
 import Album from './Pages/Album'
@@ -9,11 +9,12 @@ import AlbumLibrary from './Pages/AlbumLibrary'
 import NotFound from './Pages/NotFound'
 import ArtistSection from './Pages/ArtistSection'
 import Favorite from './Pages/Favorite'
-
+//import Playbar from './components/Playbar'
 
 function App() {
   return (
       <BrowserRouter>
+        
           <Switch>
             <Route 
               exact 

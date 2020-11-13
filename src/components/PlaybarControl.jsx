@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import '../styles/componentsStyles/SideLinks.scss';
 
-const PlaybarControl = ({ path, icon, classname, event }) => {
+const PlaybarControl = ({ icon, classname, event }) => {
     return (
         <Fragment>
-            <Link to={path} className={classname} onClick={event}>
+            <div className={classname} onClick={event}>
                 {icon}
-            </Link>
+            </div>
         </Fragment>
     );
 }

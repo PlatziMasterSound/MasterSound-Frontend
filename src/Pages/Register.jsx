@@ -11,7 +11,7 @@ export default function Register () {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [country_id, setCountry_id] = useState('');
-    const [image_url, setImage_url] = useState('');
+    //const [image_url, setImage_url] = useState('');
     const [sex, setSex] = useState('');
 
     const history = useHistory();

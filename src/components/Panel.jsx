@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom'
 import '../styles/PagesStyles/Panel.scss'
 import SideLinks from '../components/SideLinks'
 import Logo from '../Assets/Icons/logo.svg'
-import Input from '../components/Input'
 import Plus from '../Assets/Icons/Plus.svg'
 import CloseBTN from '../Assets/Icons/CloseBTN.svg'
-import ButtonWhite from '../components/ButtonWhite'
 import PlayList from '../components/PlayList'
+import PlayListForm from '../components/PlayListForm'
 
 //********  Icons  **********//
 import { AddIcon, DiscoverIcon, SongsIcon,
@@ -24,21 +23,14 @@ class ModalNewPlayList extends Component{
                 <div className="close-button">
                     <img src={CloseBTN} alt="Close" onClick={this.props.onCloseLogin}/> 
                 </div>
-                <div className='Input-styl'>
-                    <Input type='text' placeholder='Playlist Name' name='Play List'/>
-                </div>
-                <div className='create-button'>
-                    <ButtonWhite text='Crear'/>
-                </div>
+                <PlayListForm />
             </div> 
         </div>
         )
     }
 }
 
-
 export default class Panel extends Component {
-
 
     state = {isModalNewPlayListOpen: false}
 

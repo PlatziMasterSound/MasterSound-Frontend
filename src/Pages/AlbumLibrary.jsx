@@ -13,6 +13,7 @@ const AlbumLibrary = () => {
     return (
         <div className="AlbumLibrary__container">
             <Panel />
+            <Playbar/>
                 <section className="AlbumLibrary__section">
                     <MenuBar />
                     <div className="AlbumSection__image">
@@ -23,7 +24,7 @@ const AlbumLibrary = () => {
                         } 
                     </div>
                 </section>
-                <Playbar />
+                
         </div>
         );
     }

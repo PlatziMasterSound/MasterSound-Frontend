@@ -37,7 +37,7 @@ function InfoAlbum({ data }) {
                         />
                         {
                             musicLocalstorage.map( (item) => (
-                                <ListAlbum data={item} {...item}/>
+                                <ListAlbum data={item} key={item.song_id} {...item}/>
                             ))
                         }
                 </section>

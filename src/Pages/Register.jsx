@@ -5,6 +5,8 @@ import '../styles/PagesStyles/Register.scss';
 import Logo from '../Assets/Icons/logo.svg';
 import ButtonWhite from '../components/ButtonWhite';
 
+
+
 export default function Register () {
     const [given_name, setGiven_name] = useState('');
     const [last_name, setLast_name] = useState('');

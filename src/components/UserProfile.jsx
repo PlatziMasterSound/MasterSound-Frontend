@@ -1,19 +1,29 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import ProfileImage from '../Assets/Icons/ProfileImage.svg'
 import '../styles/componentsStyles/UserProfile.scss'
 
-class Modal extends Component{
-  render(){
-      return(
-          <section>
-            <div className="perfilMenu">
-                <Link to="/home/configuration">Configuración</Link>
-                <Link to="/Signin">Cerrar Sesión</Link>
-            </div>
-        </section>
-      )
+const id = localStorage.getItem("id")
+const token = localStorage.getItem("token")
+
+function Modal() {
+  let history = useHistory();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    localStorage.removeItem('id', id);
+    localStorage.removeItem('token', token);
+    history.push("/");
   }
+
+  return (
+    <div className="perfilMenu">
+      <Link onClick={handleClick}>
+        Cerrar Sesion
+      </Link>
+    </div>
+  );
 }
 
 class UserProfile extends React.Component {

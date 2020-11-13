@@ -38,15 +38,12 @@ export default function SingIn() {
         }).then(res => res.json())
         .then(response => {
             if(response.access_token) {
-                console.log('Success:', response);
                 var token = response.access_token;
                 localStorage.setItem('token', token)
                 var decode = jwt_decode(token);
                 localStorage.setItem('id', decode.identity);
-                console.log(decode);
                 history.push('/home');
             } else {
-                console.log('Error')
                 toast.error('e-mail o password incorrecto!!!', {
                     draggable: true,
                 })

@@ -1,7 +1,7 @@
 import React from 'react'
 import Panel from '../components/Panel'
 import ArtistImage from '../components/ArtistImage'
-//import Playbar from '../components/Playbar'
+import Playbar from '../components/Playbar'
 import MenuBar from '../components/MenuBar'
 
 import '../styles/PagesStyles/ArtistSection.scss'
@@ -13,6 +13,7 @@ const ArtistSection = () => {
     return(
         <div className="ArtistSection__container">
             <Panel />
+            <Playbar />
                 <section className="ArtistSection">
                 <MenuBar />
                 <div className="ArtisSection__image">

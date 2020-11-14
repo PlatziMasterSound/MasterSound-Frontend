@@ -17,6 +17,7 @@ function InfoAlbum({ data }) {
     })
 //----------------------getting songs from local storage-----------------------//
     const musicLocalstorage = JSON.parse( localStorage.getItem("SongsList"))
+    
     const idAlbum = data.spt_album_id;
 
     return (
@@ -36,7 +37,7 @@ function InfoAlbum({ data }) {
                         />
                         {
                             musicLocalstorage.map( (item) => (
-                                <ListAlbum data={item} {...item}/>
+                                <ListAlbum data={item} key={item.song_id} {...item}/>
                             ))
                         }
                 </section>

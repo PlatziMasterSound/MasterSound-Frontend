@@ -19,8 +19,6 @@ body {
   color: #F2EBEF;
   &:hover{
     opacity: 1;
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
     font-size: 14px;
     svg, p {
         color: $font-color;
@@ -63,6 +61,7 @@ body {
     font-size: 12px;
     line-height: 16px;
     font-weight: 600;
+    cursor: pointer;
   }
   &__Reproductions {
       margin: 14px 0px 14px 0px;

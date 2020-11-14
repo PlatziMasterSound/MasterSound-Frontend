@@ -9,12 +9,17 @@ import AlbumLibrary from './Pages/AlbumLibrary'
 import NotFound from './Pages/NotFound'
 import ArtistSection from './Pages/ArtistSection'
 import Favorite from './Pages/Favorite'
+
+//import Playbar from './components/Playbar'
+//=======
 import PrivateRoute from './context/auth'
+
 
 
 function App() {
   return (
       <BrowserRouter>
+        
           <Switch>
             <Route 
               exact 

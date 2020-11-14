@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import '../styles/PagesStyles/Panel.scss'
 import SideLinks from '../components/SideLinks'
 import Logo from '../Assets/Icons/logo.svg'
-import Input from '../components/Input'
 import Plus from '../Assets/Icons/Plus.svg'
 import CloseBTN from '../Assets/Icons/CloseBTN.svg'
-import ButtonWhite from '../components/ButtonWhite'
+import PlayList from '../components/PlayList'
+import PlayListForm from '../components/PlayListForm'
 
 //********  Icons  **********//
 import { AddIcon, DiscoverIcon, SongsIcon,
@@ -23,18 +23,12 @@ class ModalNewPlayList extends Component{
                 <div className="close-button">
                     <img src={CloseBTN} alt="Close" onClick={this.props.onCloseLogin}/> 
                 </div>
-                <div className='Input-styl'>
-                    <Input type='text' placeholder='Nombre de tú Playlist' name='Play List'/>
-                </div>
-                <div className='create-button'>
-                    <ButtonWhite text='Crear'/>
-                </div>
+                <PlayListForm />
             </div> 
         </div>
         )
     }
 }
-
 
 export default class Panel extends Component {
 
@@ -75,14 +69,9 @@ export default class Panel extends Component {
                     <ModalNewPlayList onCloseLogin={this._closeNewPlayList}/> 
                     }
                 </div>
+                <PlayList folderIcon={<AddIcon />}/>
             </div>
         )
     }
 }
                    
-
-/* 
-<SideLinks icon={<AddIcon />} text='Bangla' />
-<SideLinks icon={<AddIcon />} text='English' />
-<SideLinks icon={<AddIcon />} text='My Style' />
-<SideLinks icon={<AddIcon />} text='Hindi' /> */

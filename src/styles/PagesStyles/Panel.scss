@@ -24,9 +24,10 @@
         align-items: center;
         justify-content: space-between;
         &__img {
-            width: 13px;
-            height: 13px;
+            width: 15px;
+            height: 15px;
             margin-right: 19px;
+            cursor: pointer;
         }
         &__p {
             font-size: 12px;

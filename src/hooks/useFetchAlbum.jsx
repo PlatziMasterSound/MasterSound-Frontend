@@ -14,7 +14,7 @@ export function useFetchAlbum (url) {
 
   useEffect (() => {
     fetchAlbum(url);
-  }, [])
+  }, [url])
 
 
   return album

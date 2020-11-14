@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 
 import '../styles/componentsStyles/Playbar.scss';
-import '../styles/componentsStyles/CircleAlbum.scss'
 
 import { BackIcon, BackwardIcon, LoadingIcon, LouderIcon, OptionsIcon, PlayIcon, WindowIcon, ForwardIcon, HomeIcon, SongsIcon, TvIcon, RadioIcon, BellIcon, DownloadItemsIcon, PauseIcon } from './Icons';
 import PlaybarControl from './PlaybarControl';
 import PlaypauseControl from './PlayPauseControl';
 import CircleTrack from '../components/CircleTrack';
+import * as songAction from '../actions/songActions';
 
 import Album from '../Assets/RollingCover.jpeg';
 
@@ -31,12 +32,24 @@ class Playbar extends React.Component {
             this.setState({
                 currentTime: this.audio.currentTime,
                 duration:  this.audio.duration
-              });
+            });
+            console.log(this.props.playing )
             let ratio = this.audio.currentTime / this.audio.duration;
             let position = (this.timeline.offsetWidth * ratio) + this.timeline.offsetLeft;
             this.positionHandle(position);
         });
     };
+ 
+    shouldComponentUpdate(nextProps, nextState){
+        if (this.props.playing !== nextProps.playing){
+            console.log(this.props.playing )
+            return true
+        }
+        if (this.state.playing !== nextState.playing){
+            return true
+        }
+            return true
+   };
 
     componentWillUnmount() {
         this.audio.removeEventListener("timeupdate", () => {});
@@ -84,6 +97,7 @@ class Playbar extends React.Component {
     render(){
         const currentTime = getTime(this.state.currentTime)
         const duration = getTime(this.state.duration)
+        
     return(
         <Fragment>
             <div className="playbar">
@@ -125,7 +139,7 @@ class Playbar extends React.Component {
             <div id='navbar' className="playbar__overlay">
                 <div className="playbar__overlay-content">
                     <audio ref={(audio) => { this.audio = audio }} className="Player__Style" controls hidden={true}>
-                        <source src="https://p.scdn.co/mp3-preview/9a19a5cf5a03b4b67708275560965f9162913e10?cid=aba92b636b61480c992f35aa022405f7" type="audio/ogg" />
+                        <source src={this.props.playing} type="audio/ogg" />
                     </audio>
                     <div className="playbar__overlay-content--btn">
                         <PlaybarControl icon={<BackIcon />} event={()=>{document.getElementById('navbar').style.height = "0%";}} classname='playbar__btn' />
@@ -154,37 +168,12 @@ class Playbar extends React.Component {
                 </div>
             </div>
             
-            {/*()=>{         
-                let audioPlayer; 
-                let trackList; 
-                let currentTrack = 0;     
-                const init = (playerElement) => {
-                    trackList = JSON.parse(playerElement.textContent);
-                    audioPlayer = new Audio();
-                    audioPlayer.addEventListener('ended', ()=>{
-                        currentTrack++;
-                        playCurrentTrack();
-                    })
-                }
-                const playCurrentTrack = () =>{
-                    audioPlayer.pause();
-                    audioPlayer.src  = trackList[currentTrack].src;
-                    audioPlayer.load();
-                    audioPlayer.play();
-                }
-                const play = () =>{
-                    audioPlayer.play();
-                }
-                const pause = () =>{
-                    audioPlayer.pause();
-                }
-                return {
-                    init: init
-                };
-            }*/}
         </Fragment>
     )}
 };
 
+const mapStateToProps = (reducer) => {
+    return reducer.songReducer;
+};
 
-export default Playbar;
+export default connect(mapStateToProps, songAction)(Playbar);

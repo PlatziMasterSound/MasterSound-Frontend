@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import { useSelector } from 'react-redux'
 
 //import '../styles/componentsStyles/Player.scss'
 
 const Player = ({ data }) => {
     const playing = useSelector(state => state.songReducer.playing)
-   
+    
     const [ song, setSong] = useState(playing);
     console.log(song);
-
+    
     useEffect(() => {
-        setSong(playing)
+        setSong()
       }, [playing]);
+      
 
     const nameArtists = data.artists.map((data) => {
         return data.artist_name;
@@ -25,8 +26,9 @@ const Player = ({ data }) => {
                         <p className='PlayerAlbum__AlbumName'>{data.album_name}</p>
                     </div>
             </div>
+            
             <audio className="Player__Style" controls >
-                <source src={song} type="audio/mpeg" />
+                <source src={playing} type="audio/mpeg" />
             </audio>
         </section>
     )

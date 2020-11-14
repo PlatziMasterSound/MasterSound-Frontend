@@ -19,7 +19,6 @@ const ListAlbum = (props) => {
     function setFavoriteSong () {
         dispatch(setFavorite(props.data.song_id))
     }
-    console.log(setPlayingSong)
 
     return (
         <Fragment>

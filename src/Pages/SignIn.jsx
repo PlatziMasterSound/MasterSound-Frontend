@@ -64,7 +64,7 @@ export default function SingIn() {
         <form onSubmit={handleSubmit} className='mainSignIn__form'>
             <>
                 <ToastContainer 
-                    position="top-center"
+                    position="top-right"
                     draggable={false} 
                     autoClose={8000}
                     hideProgressBar={false}
@@ -76,7 +76,7 @@ export default function SingIn() {
                     style={{ width: '400px', 
                             height: '300px',
                             color:'white',
-                            top:'26%' }}
+                            opacity:'0.8' }}
                 />
             </>
             <label>e-mail</label>

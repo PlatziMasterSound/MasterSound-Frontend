@@ -76,7 +76,7 @@ export default function Register () {
             <form onSubmit={handleSubmit} className='mainSignIn__form'>
                 <>
                     <ToastContainer 
-                        position="top-center"
+                        position="top-right"
                         draggable={false} 
                         autoClose={8000}
                         hideProgressBar={false}
@@ -88,7 +88,7 @@ export default function Register () {
                         style={{ width: '400px', 
                                 height: '300px',
                                 color:'white',
-                                top:'18%' }}
+                                opacity:'0.7' }}
                     />
                 </>
                 <label>Nombre de Usuario</label>

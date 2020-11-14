@@ -9,12 +9,12 @@ import AlbumLibrary from './Pages/AlbumLibrary'
 import NotFound from './Pages/NotFound'
 import ArtistSection from './Pages/ArtistSection'
 import Favorite from './Pages/Favorite'
-<<<<<<< HEAD
+
 //import Playbar from './components/Playbar'
-=======
+//=======
 import PrivateRoute from './context/auth'
 
->>>>>>> 49f963508dc5d7c76a6aa05d3e3638834e865af8
+
 
 function App() {
   return (

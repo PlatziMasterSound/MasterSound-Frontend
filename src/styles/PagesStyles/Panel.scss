@@ -10,6 +10,9 @@
     background: $Color-Panel;
     height: 100vh;
     width: 170px;
+    @media screen and (max-width: 800px){
+		display: none;
+	}
     &__logo{
         width: 127px;
         height: 98px;

@@ -5,11 +5,10 @@ import { useFetchPlayList } from '../hooks/useFetchPlayList'
 import Panel from '../components/Panel'
 import '../styles/PagesStyles/Home.scss'
 import CircleAlbumGarden from '../components/CirculeAlbumGarden'
-import TopTracks from '../components/TopTracks'
 import PurpleButtonGarden from '../components/PurpleButtonGarden'
 import SquareAlbumGarden from '../components/SquareAlbumGarden'
 import RectangleAlbumGarden from '../components/RectangleAlbumGarden'
-//import Playbar from '../components/Playbar'
+import Playbar from '../components/Playbar'
 import MenuBar from '../components/MenuBar'
 
 
@@ -31,13 +30,13 @@ const Home = () => {
         return(
             <div className='Home__container'>
                     <Panel />
+                    <Playbar />
                     <section className='Content__section'>
                         <MenuBar />
                         <CircleAlbumGarden SectionName='Tendencias'/>
                         <SquareAlbumGarden SectionName='Recomendaciones'/>
                         <PurpleButtonGarden />
                         <RectangleAlbumGarden SectionName='Escuchado recientemente'/>
-                        <TopTracks />
                     </section>
                                     
                 </div>

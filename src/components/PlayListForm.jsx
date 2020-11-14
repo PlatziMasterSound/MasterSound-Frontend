@@ -5,10 +5,11 @@ import ButtonWhite from './ButtonWhite'
 const PlayListForm = () => {
     const [playlist_name, setPlay_List] = useState('');
     
+    const id = localStorage.getItem("id")
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        fetch('https://mastersound-backend-test.azurewebsites.net/api/playlists/user/1', {
+        fetch(`https://mastersound-backend-test.azurewebsites.net/api/playlists/user/${id}`, {
             method: 'post',
             mode: 'cors', 
             headers: {
@@ -29,7 +30,7 @@ const PlayListForm = () => {
         return (
             <div>
                 <form onSubmit={handleSubmit}>
-                    <div className='Input-styl'>
+                    <div className='Input-style'>
                         <Input 
                         type='text' 
                         placeholder='Playlist Name' 

@@ -14,7 +14,7 @@ function Modal() {
     e.preventDefault();
     localStorage.removeItem('id', id);
     localStorage.removeItem('token', token);
-    history.push("/");
+    history.push("/signin");
   }
 
   return (
@@ -42,7 +42,6 @@ class UserProfile extends React.Component {
     <section className="UserProfile__section" onClick={this.handleClick}>
       {this.state.isToggleOn ? '' : <Modal onClose={this._closeModal}/>}
       <img src={ProfileImage} alt="profile icon"/>
-      <p>User Name </p>
     </section>
   );
 }

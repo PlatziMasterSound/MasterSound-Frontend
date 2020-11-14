@@ -33,7 +33,7 @@ class Playbar extends React.Component {
                 currentTime: this.audio.currentTime,
                 duration:  this.audio.duration
             });
-            console.log(this.props.playing )
+            
             let ratio = this.audio.currentTime / this.audio.duration;
             let position = (this.timeline.offsetWidth * ratio) + this.timeline.offsetLeft;
             this.positionHandle(position);
@@ -48,7 +48,7 @@ class Playbar extends React.Component {
         if (this.state.playing !== nextState.playing){
             return true
         }
-            return true
+            return false
    };
 
     componentWillUnmount() {

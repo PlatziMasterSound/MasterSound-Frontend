@@ -29,7 +29,7 @@ export default function SingIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault();      
-        fetch('https://mastersound-backend.azurewebsites.net/api/auth/login', {
+        fetch('https://mastersound-backend-test.azurewebsites.net/api/auth/login', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'

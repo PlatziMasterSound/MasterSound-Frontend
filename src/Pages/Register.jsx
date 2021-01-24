@@ -34,7 +34,7 @@ export default function Register () {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        fetch('https://mastersound-backend.azurewebsites.net/api/auth/signup', {
+        fetch('https://mastersound-backend-test.azurewebsites.net/api/auth/signup', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'

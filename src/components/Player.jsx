@@ -1,15 +1,15 @@
 import React, { useEffect, useState} from 'react'
 import { useSelector } from 'react-redux'
 
-//import '../styles/componentsStyles/Player.scss'
+import '../styles/componentsStyles/Player.scss'
 
 const Player = ({ data }) => {
     const playing = useSelector(state => state.songReducer.playing)
     
-    const [ song, setSong] = useState(playing);
-    console.log(song);
+    const [ song, setSong] = useState();
     
     useEffect(() => {
+        console.log("estoy aquí");
         setSong()
       }, [playing]);
       

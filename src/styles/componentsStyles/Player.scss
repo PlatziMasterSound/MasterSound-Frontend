@@ -1,0 +1,46 @@
+@import "../App.scss";
+
+.Player__container{
+    background-color: #1D022E;
+    margin: 0px;
+    margin-top: 300px;
+    width: 100%;
+    height: 62px;
+    display: grid;
+    grid-template-columns: 167px 1fr;
+    grid-gap: 10px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+.PlayerAlbum__info{
+    background-color: #F72585;
+    display: flex;
+    padding: 2px;
+}
+.PlayerAlbum__cover{
+    height: 40px;
+    width: 40px;
+    margin-left: 12px;
+    margin-top: 12px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.PlayerAlbum__TextSection{
+    display: flex;
+    flex-direction: column;
+}
+.PlayerAlbum__ArtistName{
+    font-size: 10px;
+    margin-top: 12px;
+    padding-left: 3px;
+}
+.PlayerAlbum__AlbumName{
+    font-size: 9px;
+    padding-left: 3px;
+    font-weight: lighter;
+}
+.Player__Style{
+    width: 100%;
+    outline: none;
+}

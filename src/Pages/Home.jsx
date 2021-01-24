@@ -1,4 +1,4 @@
-import React, { useEffect }  from 'react'
+import React, { Suspense, useEffect }  from 'react'
 import { useFetchAlbum } from '../hooks/useFetchAlbum'
 import { useFetchPlayList } from '../hooks/useFetchPlayList'
 
@@ -28,18 +28,19 @@ const Home = () => {
       }, []);
       
         return(
-            <div className='Home__container'>
-                    <Panel />
-                    <Playbar />
-                    <section className='Content__section'>
-                        <MenuBar />
-                        <CircleAlbumGarden SectionName='Tendencias'/>
-                        <SquareAlbumGarden SectionName='Recomendaciones'/>
-                        <PurpleButtonGarden />
-                        <RectangleAlbumGarden SectionName='Escuchado recientemente'/>
-                    </section>
-                                    
-                </div>
+            <Suspense fallback={<h1>Loading profile...</h1>}>
+                <div className='Home__container'>
+                        <Panel />
+                        <Playbar />
+                        <section className='Content__section'>
+                            <MenuBar />
+                            <CircleAlbumGarden SectionName='Tendencias'/>
+                            <SquareAlbumGarden SectionName='Recomendaciones'/>
+                            <PurpleButtonGarden />
+                            <RectangleAlbumGarden SectionName='Escuchado recientemente'/>
+                        </section>                 
+                    </div>
+            </Suspense>
         )
 }
 export default Home;

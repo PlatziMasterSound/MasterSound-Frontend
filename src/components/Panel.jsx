@@ -69,7 +69,7 @@ export default class Panel extends Component {
                     <ModalNewPlayList onCloseLogin={this._closeNewPlayList}/> 
                     }
                 </div>
-                <PlayList folderIcon={<AddIcon />}/>
+                {/* <PlayList folderIcon={<AddIcon />}/> */} 
             </div>
         )
     }
